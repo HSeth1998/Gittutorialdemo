@@ -241,3 +241,115 @@ $ git status
 fatal: not a git repository (or any of the parent directories): .git
 
 Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials
+
+
+
+
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials
+$ git init
+Initialized empty Git repository in C:/Users/Lenovo/Desktop/Git tutorials/.git/
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git add .
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git commit -m "initial commit"
+[master (root-commit) c17b485] initial commit
+ 6 files changed, 254 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 bash commands.txt
+ create mode 100644 document.docx
+ create mode 100644 first_rename.txt
+ create mode 100644 myexcel.xlsx
+ create mode 100644 static/test.txt
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   first_rename.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git add first_rename.txt
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   first_rename.txt
+
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git restore --staged first_rename.txt
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   first_rename.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   first_rename.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git checkout -- first_rename.txt
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git commit -m "thsi"
+On branch master
+nothing to commit, working tree clean
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+        modified:   first_rename.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git checkout -f
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
