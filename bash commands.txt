@@ -1,0 +1,243 @@
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    2nd.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        3rd.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git add .
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    2nd.txt -> 3rd.txt
+
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git commit -m "rename 2nd to 3rd"
+[master 871d309] rename 2nd to 3rd
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename 2nd.txt => 3rd.txt (100%)
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    3rd.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git rm 3rd.txt
+rm '3rd.txt'
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    3rd.txt
+
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git commit -m "remove bad file 3rd.txt"
+[master 5bf5243] remove bad file 3rd.txt
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 3rd.txt
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git mv 3rd.txt 3rd_rename.txt
+fatal: bad source, source=3rd.txt, destination=3rd_rename.txt
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git mv first.txt first_rename.txt
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    first.txt -> first_rename.txt
+
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git commit -m "renamed"
+[master 8aa218d] renamed
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename first.txt => first_rename.txt (100%)
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git add .
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git commit -m "changed .gitignore"
+[master efaa5c8] changed .gitignore
+ 1 file changed, 1 insertion(+)
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   document.docx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git rm --m document.docx
+error: unknown option `m'
+usage: git rm [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch]
+              [--quiet] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+              [--] [<pathspec>...]
+
+    -n, --dry-run         dry run
+    -q, --quiet           do not list removed files
+    --cached              only remove from the index
+    -f, --force           override the up-to-date check
+    -r                    allow recursive removal
+    --ignore-unmatch      exit with a zero status even if nothing matched
+    --sparse              allow updating entries outside of the sparse-checkout cone
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git rm --cached document.docx
+rm 'document.docx'
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    document.docx
+
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git commit -m "removed document.txt'
+>
+> git commit -m "removed document.docx"
+> /Git tutorials
+> q
+> :q
+> ^C
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git commit -m "removed document.docx"
+[master 63637fd] removed document.docx
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 document.docx
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        document.docx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        document.docx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git add .
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git commit -m "for tutorial"
+[master f384430] for tutorial
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 document.docx
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials (master)
+$ rm -rf .git
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials
+$ git clone https://github.com/pandas-dev/pandas.git
+Cloning into 'pandas'...
+remote: Enumerating objects: 334993, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 334993 (delta 3), reused 0 (delta 0), pack-reused 334983
+Receiving objects: 100% (334993/334993), 293.44 MiB | 5.68 MiB/s, done.
+Resolving deltas: 100% (281216/281216), done.
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+Lenovo@DaddY MINGW64 ~/Desktop/Git tutorials
